@@ -1,5 +1,6 @@
 package com.aws.filetest.controller;
 
+import com.aws.filetest.model.StethScopeData;
 import com.aws.filetest.service.S3Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,12 @@ public class S3Controller {
     }
 
     @GetMapping("/file-list")
-    public ResponseEntity<String> list() {
+    public ResponseEntity<List<StethScopeData>> list() {
         return ResponseEntity.ok(s3Service.showFileList());
+    }
+
+    @GetMapping("file-list/{fileName}")
+    public ResponseEntity<String> findFile(@PathVariable String fileName) {
+        return ResponseEntity.ok(s3Service.searchFile(fileName));
     }
 }
