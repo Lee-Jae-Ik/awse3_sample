@@ -18,8 +18,8 @@ cloud:
   aws:
     credentials:
       instance-profile: false
-      access-key: "??? ? ??"
-      secret-key: "??? ? ??"
+      access-key: AKIATEXEG53RIISDJBS7
+      secret-key: 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
     region:
       auto: false
       static: ap-northeast-2
@@ -35,4 +35,4 @@ logging:
 
 aws:
   s3:
-    bucket: "Bucket ?? ??"
+    bucket: stethoscopedatatest

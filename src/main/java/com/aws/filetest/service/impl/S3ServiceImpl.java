@@ -64,7 +64,7 @@ public class S3ServiceImpl implements S3Service {
         String fileName = file.getOriginalFilename();
         if (fileName.indexOf(".") != -1) {
             String ext = fileName.split("\\.")[1];
-            PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, "유저이름 넣어야함" + "." + ext, FileUtils.convert(file));
+            PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, "유저이름넣어야함" + "." + ext, FileUtils.convert(file));
             putObjectRequest.setCannedAcl(CannedAccessControlList.PublicRead);
             amazonS3.putObject(putObjectRequest);
             return "success";
